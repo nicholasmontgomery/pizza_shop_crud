@@ -14,6 +14,12 @@ get "/pizza_orders/new" do
   erb(:new)
 end
 
+
+get "/pizza_orders/:id/edit"do
+  @order = PizzaOrder.find(params[:id])
+  erb(:edit)
+end
+
 get "/pizza_orders/:id" do
   @order = PizzaOrder.find(params[:id])
   erb(:show)
@@ -30,4 +36,12 @@ post "/pizza_orders/:id/delete" do
   @order = PizzaOrder.find(params[:id])
   @order.delete()
   redirect to "/pizza_orders"
+end
+
+
+post "/pizza_orders/:id" do
+  # binding.pry()
+  @order = PizzaOrder.new(params)
+  @order.update()
+  redirect to "/pizza_orders/#{params[:id]}"
 end

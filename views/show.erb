@@ -2,6 +2,12 @@
 <p>Last Name: <%= @order.last_name %></p>
 <p>Topping: <%= @order.topping %></p>
 <p>Quantity: <%= @order.quantity %></p>
+
+
+<form class="" action="/pizza_orders/<%= @order.id %>/edit">
+  <button type="submit">Edit</button>
+
+</form>
 <form class="" action="/pizza_orders/<%=@order.id%>/delete" method="post">
   <input type="submit" value="Delete order"/>
 </form>
