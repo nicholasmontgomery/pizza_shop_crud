@@ -29,5 +29,5 @@ end
 post "/pizza_orders/:id/delete" do
   @order = PizzaOrder.find(params[:id])
   @order.delete()
-  erb(:delete)
+  redirect to "/pizza_orders"
 end
