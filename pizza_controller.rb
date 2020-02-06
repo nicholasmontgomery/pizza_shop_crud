@@ -14,8 +14,7 @@ get "/pizza_orders/new" do
   erb(:new)
 end
 
-
-get "/pizza_orders/:id/edit"do
+get "/pizza_orders/:id/edit" do
   @order = PizzaOrder.find(params[:id])
   erb(:edit)
 end
